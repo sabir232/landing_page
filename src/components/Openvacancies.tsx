@@ -55,7 +55,7 @@ const OpenVacancies: React.FC = () => {
       </motion.div>
       <div className="mt-12 grid grid-cols-3 justify-between gap-8">
         {vacancies.map((vac, index) => {
-          return <HoverCard key={index} vac={vac} />;
+          return <HoverCard key={index} vac={vac} index={index} />;
         })}
       </div>
     </section>
