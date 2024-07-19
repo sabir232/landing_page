@@ -10,7 +10,7 @@ const MeetAheadCard: React.FC = () => {
         style={{ height: "450px" }}
         className="bg-bgPeach overflow-hidden relative flex rounded-lg"
       >
-        <div className="basis-1/2 px-7">
+        <div className=" basis-1/2 px-7">
           <div className="flex flex-col mt-20 gap-3">
             <div>
               <p className="text-md text-left">Built Out of Frustration</p>
@@ -21,11 +21,11 @@ const MeetAheadCard: React.FC = () => {
           </div>
         </div>
         <div className="basis-1/2 flex items-center">
-          <div className="flex flex-col gap-12 w-4/5 items-center">
+          <div className="flex flex-col gap-12 w-4/5  items-center">
             <div>
               <p className="text-lg">
-                A personalized pocket coach that provides bitesized,
-                science-driven tools to boost emotional intelligence.
+                A personalized pocket coach that provide
+                bitesized,science-driven tools to boost emotional intelligence.
               </p>
             </div>
             <div>
@@ -37,7 +37,7 @@ const MeetAheadCard: React.FC = () => {
           </div>
         </div>
 
-        {/* circle div */}
+        {/* circle div  */}
         <motion.div
           whileInView="visible"
           viewport={{ once: true }}
@@ -93,10 +93,10 @@ const MeetAheadCard: React.FC = () => {
           <Image height={100} width={100} src="/leaf.png" alt="" />
         </motion.div>
 
-        {/* Ghost Div */}
+        {/*GHost Div  */}
         <div
           style={{ top: "62%", left: "15%", transform: "translate(-50%,-50%)" }}
-          className="absolute flex justify-center items-center rounded-full bg-white h-44 w-44 border-8 border-borderGrey"
+          className="absolute  flex justify-center items-center rounded-full bg-white h-44 w-44 border-8 border-borderGrey"
         >
           <motion.div
             transition={{ duration: "1.5" }}
@@ -116,7 +116,7 @@ const MeetAheadCard: React.FC = () => {
               alt=""
             />
           </motion.div>
-          {/* Badge */}
+          {/*Badge*/}
           <motion.div
             whileInView="visible"
             viewport={{ once: true }}
@@ -153,7 +153,7 @@ const MeetAheadCard: React.FC = () => {
           duration: 2,
         }}
         style={{ right: "280px", top: "-20px" }}
-        className="h-11 w-11 absolute"
+        className="h-11 w-11 absolute "
       >
         <Image height={100} width={100} src="/flower.png" alt="" />
       </motion.div>

@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
@@ -19,14 +19,16 @@ const customAnimation = keyframes`
 `;
 
 const SelfImprovement: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <section className="px-20 mt-10 mb-24">
+    <section className="px-20 mt-10 mb-24" ref={ref}>
       <div className="flex flex-row justify-between items-center">
         <motion.div
           className="inline-block"
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate={isInView ? "visible" : "hidden"}
           transition={{ duration: 1.9, type: "spring", bounce: 0.1 }}
           variants={{
             visible: { opacity: 1, scale: 1, y: 0, x: 0 },
@@ -49,7 +51,7 @@ const SelfImprovement: React.FC = () => {
             delay: 0.3,
           }}
           initial="hidden"
-          whileInView="visible"
+          animate={isInView ? "visible" : "hidden"}
           variants={{
             visible: {
               opacity: 1,
@@ -73,7 +75,7 @@ const SelfImprovement: React.FC = () => {
 
       <div className="timeline px-20 pt-14 h-96 overflow-y-scroll">
         <div className="border-l-2 border-l-violet-300 flex flex-col gap-16">
-          <Reveal keyframes={customAnimation}>
+          <Reveal keyframes={customAnimation} triggerOnce={false}>
             {[...Array(8)].map((_, index) => (
               <div key={index}>
                 <motion.div className="max-w-[40rem] relative align-top pl-8">

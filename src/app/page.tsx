@@ -6,9 +6,10 @@ import Footer from "@/components/Footer";
 import MasterLife from "@/components/MasterLife";
 import MeetAheadCard from "@/components/MeetAheadCard";
 import Navbar from "@/components/Navbar";
+import OpenVacancies from "@/components/Openvacancies";
 import SelfImprovement from "@/components/SelfImprovement";
 import Test from "@/components/Test";
-import Image from "next/image";
+import WorkWithUs from "@/components/WorkWithUs";
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
       <BeBestYou />
       <EverWonder />
       <Test />
+      <WorkWithUs />
+      <OpenVacancies />
       <Footer />
     </>
   );

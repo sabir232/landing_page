@@ -13,13 +13,17 @@ const DoesThisSoundsFamiliar: React.FC = () => {
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
       },
-      { rootMargin: "-300px" }
+      { rootMargin: "-300px", threshold: 0.5 }
     );
     if (ref.current) {
       observer.observe(ref.current);
     }
-    return () => observer.disconnect();
-  }, [isIntersecting]);
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isIntersecting && boxContainerRef.current) {
@@ -37,8 +41,7 @@ const DoesThisSoundsFamiliar: React.FC = () => {
         <motion.div
           className="inline-block"
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate={isIntersecting ? "visible" : "hidden"}
           transition={{ duration: 1.9, type: "spring", bounce: 0.1 }}
           variants={{
             visible: { opacity: 1, scale: 1, y: 0, x: 0 },
@@ -50,7 +53,7 @@ const DoesThisSoundsFamiliar: React.FC = () => {
           </h1>
         </motion.div>
         <motion.div
-          viewport={{ once: true }}
+          animate={isIntersecting ? "visible" : "hidden"}
           transition={{
             duration: 2.1,
             ease: "easeInOut",
@@ -58,7 +61,6 @@ const DoesThisSoundsFamiliar: React.FC = () => {
             delay: 0.3,
           }}
           initial="hidden"
-          whileInView="visible"
           variants={{
             visible: {
               opacity: 1,

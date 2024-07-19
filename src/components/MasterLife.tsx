@@ -59,15 +59,15 @@ const MasterLife: React.FC = () => {
           </div>
           {/* dashed circular div */}
           <motion.div
-            whileInView="visible"
-            viewport={{ once: true }}
             initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
             variants={{
-              hidden: { opacity: 1 },
+              hidden: { opacity: 0 },
               visible: { opacity: 1, rotate: 360 },
             }}
             transition={{
-              type: "",
+              type: "tween",
               duration: 2,
               ease: "easeInOut",
             }}
@@ -76,8 +76,9 @@ const MasterLife: React.FC = () => {
           >
             {/* red ghost */}
             <motion.div
+              initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.5 }}
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
               style={{ top: "55px" }}
@@ -93,8 +94,9 @@ const MasterLife: React.FC = () => {
             </motion.div>
             {/* blue ghost */}
             <motion.div
+              initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.5 }}
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
               style={{
@@ -114,8 +116,9 @@ const MasterLife: React.FC = () => {
             </motion.div>
             {/* violet ghost */}
             <motion.div
+              initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.5 }}
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
               style={{ bottom: "-22px", right: "50%" }}
@@ -128,9 +131,9 @@ const MasterLife: React.FC = () => {
 
         {/* leaf div */}
         <motion.div
-          whileInView="visible"
-          viewport={{ once: true }}
           initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
           variants={{
             visible: {
               x: [0, 10],
@@ -157,8 +160,9 @@ const MasterLife: React.FC = () => {
 
         {/* small circle 1 */}
         <motion.div
+          initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           animate={{ x: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ bottom: "-13px", left: "150px" }}
@@ -166,8 +170,9 @@ const MasterLife: React.FC = () => {
         ></motion.div>
         {/* small circle 2 */}
         <motion.div
+          initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           animate={{ y: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ left: "-15px", top: "50%" }}
@@ -175,8 +180,9 @@ const MasterLife: React.FC = () => {
         ></motion.div>
         {/* small circle 3 */}
         <motion.div
+          initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           animate={{ x: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ right: "150px", top: "-15px" }}
@@ -184,8 +190,9 @@ const MasterLife: React.FC = () => {
         ></motion.div>
         {/* Single Leaf */}
         <motion.div
+          initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           animate={{ x: 150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ left: "150px", top: "0px" }}
