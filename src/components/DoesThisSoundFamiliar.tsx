@@ -9,6 +9,7 @@ const DoesThisSoundsFamiliar: React.FC = () => {
   const boxContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);

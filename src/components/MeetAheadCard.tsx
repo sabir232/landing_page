@@ -129,7 +129,7 @@ const MeetAheadCard: React.FC = () => {
               type: "spring",
               duration: "1.5",
               ease: "easeInOut",
-              delay: "0.5",
+              delay: 0.5,
             }}
             className="absolute h-11 w-11"
             style={{ top: "-22px" }}
