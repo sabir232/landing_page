@@ -9,7 +9,7 @@ const EverWonder: React.FC = () => {
 
   return (
     <section
-      className="mt-16 mb-32 rounded-3xl bg-blue-50 p-10 mx-24"
+      className="mt-8 mb-16 rounded-3xl bg-blue-50 p-6 sm:p-8 md:p-10 lg:p-12 mx-4 sm:mx-6 md:mx-8 lg:mx-24"
       ref={ref}
     >
       <motion.div
@@ -20,49 +20,45 @@ const EverWonder: React.FC = () => {
           visible: { opacity: 1, scale: 1, x: 0, y: 0 },
           hidden: { opacity: 0, scale: 0.5 },
         }}
+        className="text-center"
       >
-        <h3 className="text-center text-gray-600 text-lg font-semibold">
-          Let your friends, family, and co-worker (anonymously) rate your social
-          skills
+        <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-600">
+          Let your friends, family, and co-workers (anonymously) rate your
+          social skills
         </h3>
-        <h1 className="text-[2.4rem] font-bold text-center mt-4">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-2">
           Ever wondered what others think of you?
         </h1>
       </motion.div>
-      <div className="mt-8 flex justify-center relative">
-        <div className="absolute top-[1.5rem] w-[780px] text-transparent border-t border-yellow-700 h-4 border-dashed"></div>
-        <div className="flex justify-evenly w-[70rem] z-[10]">
-          <div className="flex flex-col justify-center">
-            <div className="flex justify-center">
-              <div className="">
-                <Image width={50} height={50} alt="" src="/badge.png" />
-              </div>
+
+      <div className="mt-6 md:mt-8 lg:mt-12 flex flex-col md:flex-row justify-center items-center relative">
+        <div className="absolute top-[0.5rem] w-full max-w-4xl text-transparent border-t border-yellow-700 h-4 border-dashed"></div>
+        <div className="flex flex-col md:flex-row justify-center w-full md:w-auto gap-6 md:gap-8 lg:gap-12 z-10">
+          <div className="flex flex-col items-center text-center">
+            <div className="flex justify-center mb-2">
+              <Image width={40} height={40} alt="badge" src="/badge.png" />
             </div>
-            <div className="text-center">
+            <div className="text-sm sm:text-base md:text-lg">
               Answer questions on <br />
               your skill.
             </div>
           </div>
 
-          <div className="flex flex-col justify-center">
-            <div className="flex justify-center">
-              <div className="">
-                <Image width={50} height={50} alt="" src="/badge.png" />
-              </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="flex justify-center mb-2">
+              <Image width={40} height={40} alt="badge" src="/badge.png" />
             </div>
-            <div className="text-center">
+            <div className="text-sm sm:text-base md:text-lg">
               Let others anonymously answer <br />
               questions about you.
             </div>
           </div>
 
-          <div className="flex flex-col justify-center">
-            <div className="flex justify-center">
-              <div className="">
-                <Image width={50} height={50} alt="" src="/badge.png" />
-              </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="flex justify-center mb-2">
+              <Image width={40} height={40} alt="badge" src="/badge.png" />
             </div>
-            <div className="text-center">
+            <div className="text-sm sm:text-base md:text-lg">
               Find where others and <br />
               you view things similarly.
             </div>
@@ -70,10 +66,10 @@ const EverWonder: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="mt-16 shadow bg-white rounded-xl w-[50rem] p-6 py-24 relative">
-          <div className="flex justify-between">
-            <div className="h-4 w-4 rounded-full bg-violet-600 z-10 relative">
+      <div className="flex justify-center mt-8">
+        <div className="shadow bg-white rounded-xl w-full max-w-4xl p-6 py-12 relative">
+          <div className="flex justify-between items-center">
+            <div className="h-3 w-3 md:h-4 md:w-4 rounded-full bg-violet-600 z-10 relative">
               <motion.div
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -87,12 +83,12 @@ const EverWonder: React.FC = () => {
                   hidden: { opacity: 0, scale: 0.5 },
                 }}
               >
-                <div className="absolute text-white p-2 bg-violet-600 rounded top-[-3rem] left-[-3rem]">
+                <div className="absolute text-white p-1 md:p-2 bg-violet-600 rounded top-[-2rem] left-[-2rem]">
                   You
                 </div>
               </motion.div>
             </div>
-            <div className="h-4 w-4 rounded-full bg-blue-400 z-10 relative">
+            <div className="h-3 w-3 md:h-4 md:w-4 rounded-full bg-blue-400 z-10 relative">
               <motion.div
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -102,12 +98,12 @@ const EverWonder: React.FC = () => {
                   hidden: { opacity: 0.5, scale: 0.5 },
                 }}
               >
-                <div className="absolute whitespace-nowrap text-white p-3 bg-blue-400 rounded top-[2rem] left-[82%]">
+                <div className="absolute whitespace-nowrap text-white p-2 md:p-3 bg-blue-400 rounded top-[1.5rem] left-[70%]">
                   Anonymous 1
                 </div>
               </motion.div>
             </div>
-            <div className="h-4 w-4 rounded-full bg-orange-400 z-10 relative">
+            <div className="h-3 w-3 md:h-4 md:w-4 rounded-full bg-orange-400 z-10 relative">
               <motion.div
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -117,12 +113,12 @@ const EverWonder: React.FC = () => {
                   hidden: { opacity: 0.5, scale: 0.5 },
                 }}
               >
-                <div className="absolute whitespace-nowrap text-white p-2 bg-orange-400 rounded top-[-3rem] left-[0.5rem]">
+                <div className="absolute whitespace-nowrap text-white p-2 md:p-3 bg-orange-400 rounded top-[-2rem] left-[-1rem]">
                   Anonymous 2
                 </div>
               </motion.div>
             </div>
-            <div className="h-4 w-4 rounded-full bg-green-400 z-10 relative">
+            <div className="h-3 w-3 md:h-4 md:w-4 rounded-full bg-green-400 z-10 relative">
               <motion.div
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -132,13 +128,13 @@ const EverWonder: React.FC = () => {
                   hidden: { opacity: 0.5, scale: 0.5 },
                 }}
               >
-                <div className="absolute whitespace-nowrap text-white p-3 bg-green-400 rounded top-[2rem] left-[82%]">
+                <div className="absolute whitespace-nowrap text-white p-2 md:p-3 bg-green-400 rounded top-[1.5rem] left-[70%]">
                   Anonymous 3
                 </div>
               </motion.div>
             </div>
           </div>
-          <div className="border-t border-yellow-700 h-1 absolute top-[50%] w-[745px]"></div>
+          <div className="border-t border-yellow-700 h-1 absolute top-[50%] w-full max-w-4xl"></div>
         </div>
       </div>
     </section>

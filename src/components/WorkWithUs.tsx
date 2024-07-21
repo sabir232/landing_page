@@ -13,9 +13,9 @@ const WorkWithUs: React.FC = () => {
   const isImageInView = useInView(imageRef, { once: false });
 
   return (
-    <div className="px-20 my-32">
-      <section className="mt-16 rounded-2xl bg-violet-100 p-12 px-16">
-        <div className="flex justify-between items-center text-5xl font-bold">
+    <div className="px-4 sm:px-8 md:px-12 lg:px-20 my-16 md:my-24 lg:my-32">
+      <section className="rounded-2xl bg-violet-100 p-6 sm:p-8 md:p-10 lg:p-12">
+        <div className="flex flex-col md:flex-row justify-between items-center text-4xl md:text-5xl lg:text-6xl font-bold">
           <motion.div
             ref={headerRef1}
             initial="hidden"
@@ -25,8 +25,9 @@ const WorkWithUs: React.FC = () => {
               visible: { opacity: 1, scale: 1, x: 0, y: 0 },
               hidden: { opacity: 0, scale: 0.5, x: "-50%" },
             }}
+            className="text-center md:text-left"
           >
-            <span className="">Work with us</span>
+            <span>Work with us</span>
           </motion.div>
 
           <motion.div
@@ -38,17 +39,18 @@ const WorkWithUs: React.FC = () => {
               visible: { opacity: 1, scale: 1, x: 0, y: 0 },
               hidden: { opacity: 0, scale: 0.5, x: "50%" },
             }}
+            className="text-center md:text-right"
           >
             <span className="text-violet-800">ahead</span>
           </motion.div>
         </div>
 
-        <div className="mt-12 flex gap-20 overflow-hidden">
-          <div className="grow">
-            <div className="rounded-2xl bg-white pt-8 max-w-[30rem] shadow-lg">
+        <div className="mt-8 md:mt-12 flex flex-col md:flex-row gap-6 md:gap-12 overflow-hidden">
+          <div className="flex-1 max-w-full md:max-w-[30rem]">
+            <div className="rounded-2xl bg-white p-6 shadow-lg">
               <motion.div
                 ref={imageRef}
-                className="pl-4 inline-block"
+                className="inline-block"
                 initial="hidden"
                 animate={isImageInView ? "visible" : "hidden"}
                 transition={{ duration: 4 }}
@@ -61,11 +63,16 @@ const WorkWithUs: React.FC = () => {
                   hidden: { opacity: 0, scale: 0.5, rotate: 0 },
                 }}
               >
-                <Image width={60} height={60} alt="" src="/ghost.png" />
+                <Image
+                  width={60}
+                  height={60}
+                  alt="Ghost icon"
+                  src="/ghost.png"
+                />
               </motion.div>
-              <div className="flex flex-col gap-3 p-4">
-                <h2 className="font-bold">About</h2>
-                <p className="font-normal">
+              <div className="flex flex-col gap-4 mt-4">
+                <h2 className="font-bold text-xl md:text-2xl">About</h2>
+                <p className="font-normal text-base md:text-lg">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Accusamus fugit ipsum voluptate deserunt, non velit a
                   blanditiis officia dolor eligendi eveniet cumque quasi
@@ -73,9 +80,9 @@ const WorkWithUs: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-2 pt-8 p-4 rounded-2xl mt-8 bg-orange-50">
-                <h2 className="font-bold">Product</h2>
-                <p className="font-normal">
+              <div className="flex flex-col gap-4 mt-8 p-4 rounded-2xl bg-orange-50">
+                <h2 className="font-bold text-xl md:text-2xl">Product</h2>
+                <p className="font-normal text-base md:text-lg">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Dolore temporibus dignissimos, laboriosam corporis deleniti
                   quod quidem explicabo? Repellendus officiis odit corrupti
@@ -86,16 +93,16 @@ const WorkWithUs: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 max-h-[75vh] overflow-y-auto pr-6 custom-scrollbar">
+          <div className="flex-1 max-h-[60vh] md:max-h-[75vh] overflow-y-auto pr-4 md:pr-6 custom-scrollbar">
             {[...Array(6)].map((val, index) => (
               <div
-                className="p-4 bg-white rounded-2xl space-y-6 w-[20rem]"
+                className="p-4 bg-white rounded-2xl space-y-4 md:space-y-6 mb-4"
                 key={index}
               >
-                <h2 className="font-bold">
+                <h2 className="font-bold text-lg md:text-xl">
                   Lorem ipsum dolor sit, amet consectetur adipisicing.
                 </h2>
-                <p className="font-normal">
+                <p className="font-normal text-sm md:text-base">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Accusamus fugit ipsum voluptate deserunt, non velit a
                   blanditiis officia dolor eligendi eveniet cumque quasi

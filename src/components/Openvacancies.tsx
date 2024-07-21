@@ -32,7 +32,7 @@ const vacancies: Vacancy[] = [
 
 const OpenVacancies: React.FC = () => {
   return (
-    <section className="mt-20 py-8 px-24 h-96">
+    <section className="mt-16 py-6 px-4 sm:px-8 lg:px-24">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -47,16 +47,18 @@ const OpenVacancies: React.FC = () => {
           },
         }}
         style={{
-          width: "100%", // Adjust the width as needed
-          overflow: "hidden", // Hide overflowing text while sliding
+          width: "100%",
+          overflow: "hidden",
         }}
       >
-        <h1 className="text-5xl font-bold">Open Vacancies</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
+          Open Vacancies
+        </h1>
       </motion.div>
-      <div className="mt-12 grid grid-cols-3 justify-between gap-8">
-        {vacancies.map((vac, index) => {
-          return <HoverCard key={index} vac={vac} index={index} />;
-        })}
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        {vacancies.map((vac, index) => (
+          <HoverCard key={index} vac={vac} index={index} />
+        ))}
       </div>
     </section>
   );
@@ -78,12 +80,14 @@ const HoverCard: React.FC<HoverCardProps> = ({ vac, index }) => {
       onHoverStart={() => setButtonVisible(true)}
       onHoverEnd={() => setButtonVisible(false)}
       transition={{ ease: "easeInOut", duration: 0.3 }}
-      className="bg-[#fefbec] rounded-lg hover:bg-[#ece7d1] hover:cursor-pointer"
+      className="bg-[#fefbec] rounded-lg hover:bg-[#ece7d1] hover:cursor-pointer shadow-md"
     >
-      <div className="rounded-2xl p-6 px-12">
-        <h2 className="text-xl font-bold">{vac.jobTitle}</h2>
+      <div className="rounded-2xl p-4 sm:p-6 md:p-8">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
+          {vac.jobTitle}
+        </h2>
 
-        <ul className="mt-4 text-sm font-semibold list-disc pl-4">
+        <ul className="mt-2 text-sm sm:text-base font-semibold list-disc pl-4">
           <li>{vac.position}</li>
           <li>{vac.location}</li>
           <li>{vac.pay}</li>
@@ -98,7 +102,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ vac, index }) => {
             visible: { opacity: 1, scale: 1 },
             hidden: { opacity: 0, scale: 0.7 },
           }}
-          className="mx-10 cursor-pointer text-white bg-black rounded-full px-3 py-2 mt-4"
+          className="mx-4 sm:mx-6 md:mx-10 cursor-pointer text-white bg-black rounded-full px-3 py-2 mt-4"
         >
           Click Me
         </motion.button>

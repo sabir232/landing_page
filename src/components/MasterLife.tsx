@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 
 const MasterLife: React.FC = () => {
   return (
-    <div className="px-20 mt-28">
+    <div className="px-4 md:px-20 mt-14 md:mt-28">
       <div
-        style={{ height: "550px" }}
+        style={{ minHeight: "550px" }}
         className="bg-bgBlue relative rounded-3xl flex flex-col md:flex-row overflow-hidden"
       >
-        <div className="flex basis-1/2 items-center justify-center">
-          <div className="pl-20 flex items-center justify-start flex-col">
+        <div className="flex basis-1/2 items-center justify-center p-4 md:p-0">
+          <div className="flex items-center justify-start flex-col text-center md:text-left">
             <div className="w-full">
               <p className="text-lg">Ahead app</p>
             </div>
             <div>
-              <p className="mt-5 text-5xl font-bold">
+              <p className="mt-5 text-2xl md:text-5xl font-bold leading-tight">
                 Master Your life by mastering emotions
               </p>
             </div>
-            <div className="flex gap-7 items-center w-full">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-7 items-center w-full mt-5">
               <Image
                 width={150}
                 height={30}
@@ -45,19 +45,18 @@ const MasterLife: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="basis-1/2 flex items-center justify-center w-full">
-          <div className="flex items-center justify-center bg-bgMobile h-60 w-60 rounded-full">
-            <div className="h-64 w-64 flex items-center">
+        <div className="basis-1/2 flex items-center justify-center w-full relative">
+          <div className="flex items-center justify-center bg-bgMobile h-40 w-40 md:h-60 md:w-60 rounded-full">
+            <div className="h-48 w-48 md:h-64 md:w-64 flex items-center">
               <Image
                 className="h-full w-full"
                 height={100}
                 width={100}
                 src="/mobile.svg"
-                alt=""
+                alt="Mobile"
               />
             </div>
           </div>
-          {/* dashed circular div */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -72,27 +71,25 @@ const MasterLife: React.FC = () => {
               ease: "easeInOut",
             }}
             style={{ border: "3px solid white ", borderStyle: "dashed" }}
-            className="absolute rounded-full h-96 w-96 border-dashed border-white"
+            className="absolute rounded-full h-72 w-72 md:h-96 md:w-96 border-dashed border-white"
           >
-            {/* red ghost */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
-              style={{ top: "55px" }}
-              className="absolute h-16 w-12"
+              style={{ top: "35px" }}
+              className="absolute h-12 w-10 md:h-16 md:w-12"
             >
               <Image
                 height={100}
                 width={100}
                 className="h-full w-full"
                 src="/blue-ghost.png"
-                alt=""
+                alt="Blue Ghost"
               />
             </motion.div>
-            {/* blue ghost */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -100,36 +97,39 @@ const MasterLife: React.FC = () => {
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
               style={{
-                right: "-30px",
+                right: "-20px",
                 top: "50%",
                 transform: "translate(-50%,-50%)",
               }}
-              className="absolute h-16 w-14"
+              className="absolute h-12 w-10 md:h-16 md:w-12"
             >
               <Image
                 height={100}
                 width={100}
                 className="h-full w-full"
                 src="/red-ghost.png"
-                alt=""
+                alt="Red Ghost"
               />
             </motion.div>
-            {/* violet ghost */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
               animate={{ rotate: -360 }}
               transition={{ type: "spring", duration: 4, bounce: 0.4 }}
-              style={{ bottom: "-22px", right: "50%" }}
-              className="absolute h-14 w-12"
+              style={{ bottom: "-12px", right: "50%" }}
+              className="absolute h-12 w-10 md:h-14 md:w-12"
             >
-              <Image height={100} width={100} src="/newGhost.png" alt="" />
+              <Image
+                height={100}
+                width={100}
+                src="/newGhost.png"
+                alt="Violet Ghost"
+              />
             </motion.div>
           </motion.div>
         </div>
 
-        {/* leaf div */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -152,13 +152,12 @@ const MasterLife: React.FC = () => {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="h-28 w-24 absolute"
+          className="h-20 w-20 md:h-28 md:w-24 absolute"
           style={{ right: "50%", top: "40%", transform: "translate(50%,50%)" }}
         >
-          <Image height={100} width={100} src="/leaf.png" alt="" />
+          <Image height={100} width={100} src="/leaf.png" alt="Leaf" />
         </motion.div>
 
-        {/* small circle 1 */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -166,9 +165,8 @@ const MasterLife: React.FC = () => {
           animate={{ x: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ bottom: "-13px", left: "150px" }}
-          className="absolute bg-orange-300 rounded-full h-12 w-12"
+          className="absolute bg-orange-300 rounded-full h-8 w-8 md:h-12 md:w-12"
         ></motion.div>
-        {/* small circle 2 */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -176,9 +174,8 @@ const MasterLife: React.FC = () => {
           animate={{ y: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ left: "-15px", top: "50%" }}
-          className="absolute bg-blue-300 rounded-full h-12 w-12"
+          className="absolute bg-blue-300 rounded-full h-8 w-8 md:h-12 md:w-12"
         ></motion.div>
-        {/* small circle 3 */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -186,9 +183,8 @@ const MasterLife: React.FC = () => {
           animate={{ x: -150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ right: "150px", top: "-15px" }}
-          className="absolute bg-yellow-300 rounded-full h-12 w-12"
+          className="absolute bg-yellow-300 rounded-full h-8 w-8 md:h-12 md:w-12"
         ></motion.div>
-        {/* Single Leaf */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -196,9 +192,14 @@ const MasterLife: React.FC = () => {
           animate={{ x: 150 }}
           transition={{ type: "spring", duration: 4, bounce: 0.4 }}
           style={{ left: "150px", top: "0px" }}
-          className="absolute h-12 w-12"
+          className="absolute h-8 w-8 md:h-12 md:w-12"
         >
-          <Image src="/singleLeaf.png" height={48} width={48} alt="" />
+          <Image
+            src="/singleLeaf.png"
+            height={48}
+            width={48}
+            alt="Single Leaf"
+          />
         </motion.div>
       </div>
     </div>

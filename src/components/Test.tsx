@@ -10,20 +10,24 @@ const Test: React.FC = () => {
   const isButtonInView = useInView(buttonRef, { once: false });
 
   return (
-    <section className="mt-20 flex flex-col gap-3 text-center p-8">
-      <p className="text-center">We take Privacy seriously</p>
-      <p className="font-bold text-3xl">Before you get started</p>
-      <p className="text-xl font-normal">
-        We wont share your answers with anyone.
-        <br /> (and wont tell you which friends said what about you)
+    <section className="mt-12 md:mt-20 flex flex-col gap-4 md:gap-6 text-center p-6 md:p-8 lg:p-10">
+      <p className="text-base md:text-lg lg:text-xl font-normal">
+        We take Privacy seriously
       </p>
-      <div className="flex flex-row gap-2 items-center justify-center">
-        <p className="">Made with Love...</p>
+      <p className="font-bold text-2xl md:text-3xl lg:text-4xl">
+        Before you get started
+      </p>
+      <p className="text-base md:text-lg lg:text-xl font-normal">
+        We won't share your answers with anyone.
+        <br /> (and won't tell you which friends said what about you)
+      </p>
+      <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+        <p className="text-base md:text-lg lg:text-xl">Made with Love...</p>
         <motion.svg
           ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
-          width="170"
-          height="70"
+          width="120" // Adjusted for better mobile view
+          height="50"
           viewBox="0 0 640 512"
           initial={{ opacity: 0, x: -10 }}
           animate={
@@ -32,6 +36,7 @@ const Test: React.FC = () => {
               : { opacity: 0, x: -10 }
           }
           transition={{ duration: 1.3 }}
+          className="max-w-full"
         >
           <path
             id="Path_1"
@@ -55,6 +60,7 @@ const Test: React.FC = () => {
             transition: { ease: "easeInOut", duration: 1, delayChildren: 0.7 },
           },
         }}
+        className="flex flex-col items-center"
       >
         <motion.div
           ref={buttonRef}
@@ -69,12 +75,12 @@ const Test: React.FC = () => {
             },
           }}
           style={{
-            width: "100%", // Adjust the width as needed
+            width: "100%", // Adjust width to fit container
             overflow: "hidden", // Hide overflowing text while sliding
           }}
-          className="pt-3"
+          className="pt-4"
         >
-          <button className="rounded-3xl p-4 px-6 text-white bg-black">
+          <button className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-3xl p-4 px-6 text-white bg-black">
             Start Test
           </button>
         </motion.div>
