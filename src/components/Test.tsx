@@ -18,8 +18,8 @@ const Test: React.FC = () => {
         Before you get started
       </p>
       <p className="text-base md:text-lg lg:text-xl font-normal">
-        We won't share your answers with anyone.
-        <br /> (and won't tell you which friends said what about you)
+        We wont share your answers with anyone.
+        <br /> (and wont tell you which friends said what about you)
       </p>
       <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
         <p className="text-base md:text-lg lg:text-xl">Made with Love...</p>
